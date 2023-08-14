@@ -1020,6 +1020,7 @@ mount_keycloak_key_apps:
   - ml-core-service
   - ml-projects-service
   - notification
+  - assessment
 
 #master category validation enabled
 master_category_validation_enabled: "Yes"
