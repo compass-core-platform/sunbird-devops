@@ -5,6 +5,7 @@ body {
     position: relative;
     letter-spacing: 0.2px;
     background: #ffffff!important;
+    overflow: hidden;
 }
 
 .fullpage-background-image {
@@ -770,8 +771,8 @@ input:focus-visible {
 /* New css */
 
 .login {
-    height: 100vh;
-    overflow-y: hidden;
+    height: 102vh;
+    overflow: hidden;
 }
 
 .login-left {
