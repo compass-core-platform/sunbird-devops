@@ -20,11 +20,13 @@
     </#if>
     <title><#nested "title"></title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
-    <#if properties.styles?has_content>
+    <link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />
+    <!--<#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
-    </#if>
+    </#if>-->
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
