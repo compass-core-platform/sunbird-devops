@@ -1,5 +1,4 @@
 var slideIndex = 1;
-alert();
 showSlides(slideIndex);
 setInterval(() => { plusSlides(1) }, 3000);
 // Next/previous controls

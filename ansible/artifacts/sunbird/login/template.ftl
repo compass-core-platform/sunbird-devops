@@ -27,7 +27,7 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>-->
-    <script src="${url.resourcesPath}/js/slider.js" type="text/javascript"></script>
+   
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
@@ -175,5 +175,6 @@
     </div>
     </main>
 </body>
+ <script src="${url.resourcesPath}/js/slider.js" type="text/javascript"></script>
 </html>
 </#macro>
