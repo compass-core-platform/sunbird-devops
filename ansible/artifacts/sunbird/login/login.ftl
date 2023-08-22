@@ -50,7 +50,7 @@
                     <span class="ui text error hide" id="inCorrectPasswordError">${msg("inCorrectPasswordError")}</span>
                     </div>
                      <#if message?has_content>
-                    <div id="error-summary" class="ui text ${message.type}">
+                    <div id="error-summary" class="login-message ui text ${message.type}">
                         ${message.summary}
                     </div>
                     </#if>
