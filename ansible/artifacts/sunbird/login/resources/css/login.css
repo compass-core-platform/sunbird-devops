@@ -862,7 +862,7 @@ input:focus-visible {
     }
 }
 
-.heading {
+.slider-heading {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 36px;
     font-weight: 600;
@@ -871,7 +871,7 @@ input:focus-visible {
     color: rgb(255, 255, 255);
 }
 
-.sub-heading {
+.slider-sub-heading {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;

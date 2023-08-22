@@ -90,24 +90,24 @@
                                     <!-- Full-width images with number and caption text -->
                                     <div class="mySlides fade">
                                         <div class="slide">
-                                            <p class="heading">1. Track your goal, perform better!</p>
-                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            <p class="slider-heading">1. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
                                                 ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
                                         </div>
                                     </div>
 
                                     <div class="mySlides fade">
                                         <div class="slide">
-                                            <p class="heading">2. Track your goal, perform better!</p>
-                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            <p class="slider-heading">2. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
                                                 ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
                                         </div>
                                     </div>
 
                                     <div class="mySlides fade">
                                         <div class="slide">
-                                            <p class="heading">3. Track your goal, perform better!</p>
-                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            <p class="slider-heading">3. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
                                                 ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
                                         </div>
                                     </div>
