@@ -82,7 +82,7 @@
                         <div class="two column row padded equal height grid login">
                             <div class="column login-left">
                                 <div class="logo">
-                                    <a href="${properties.kcLogoLink!'#'}"><img src="./resources/img/sunbird_logo.png" /></a>
+                                    <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
                                 </div>
                                 <!-- Slideshow container -->
                                 <div class="slideshow-container">
