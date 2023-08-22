@@ -5,13 +5,9 @@
     <#elseif section = "header">
     <#elseif section = "form">
     <#if realm.password>
-    <div class="fullpage-background-image">
-    <div class="container-wrapper">
-                <div class="ui header centered mb-8">
-                    <img onerror="" alt="">
-                    <h2 id="signIn" class="signInHead mt-8 mb-8">${msg("loginDiksha")}</h2>
-                    <p class="subtitle">Login</p>
-                </div>
+        <div class="login-container">
+                <div class="ui form segment error">
+                <p class="heading">Login</p>
                 <p id="mergeAccountMessage" class="hide mb-0 textCenter">${msg("mergeAccountMessage")}</p>
                 <p id="migrateAccountMessage" class="hide mb-0 textCenter">${msg("migrateAccountMessage")}</p>
                 <div class="formMsg textCenter mt-8">

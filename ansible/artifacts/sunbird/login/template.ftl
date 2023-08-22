@@ -77,9 +77,63 @@
                         </div-->
                     </#if>
 
-                    <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <#nested "form">
+
+                    <div class="ui grid">
+                        <div class="two column row padded equal height grid login">
+                            <div class="column login-left">
+                                <div class="logo">
+                                    <a href="${properties.kcLogoLink!'#'}"><img src="./images/sunbird_logo.png" /></a>
+                                </div>
+                                <!-- Slideshow container -->
+                                <div class="slideshow-container">
+
+                                    <!-- Full-width images with number and caption text -->
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="heading">1. Track your goal, perform better!</p>
+                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="heading">2. Track your goal, perform better!</p>
+                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="heading">3. Track your goal, perform better!</p>
+                                            <p class="sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Next and previous buttons -->
+                                    <!-- <span class="prev" (click)="plusSlides(-1)">&#10094;</span>
+                                    <span class="next" (click)="plusSlides(1)">&#10095;</span> -->
+                                </div>
+                                <br>
+
+                                <!-- The dots/circles -->
+                                <div class="slider-dots">
+                                    <span class="dot" (click)="currentSlide(1)"></span>
+                                    <span class="dot" (click)="currentSlide(2)"></span>
+                                    <span class="dot" (click)="currentSlide(3)"></span>
+                                </div>
+                            </div>
+                            <div class="column login-right ui grid middle aligned">
+
+
+                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                                        <#nested "form">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <script type="text/javascript">
