@@ -777,17 +777,15 @@ input:focus-visible {
 
 .login-left {
     background-color: rgb(35, 134, 252) !important;
-    background: url('./../assets/images/login-bg.png') fixed no-repeat bottom right;
+    background: url('./../img/login-bg.png') fixed no-repeat bottom right;
     background-attachment: scroll;
-
-    .logo img {
-        margin-top: 10%;
-        margin-left: 15%;
-        width: 150px;
-    }
 }
 
-
+.logo img {
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 150px;
+}
 
 * {
     box-sizing: border-box
