@@ -139,28 +139,6 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-                        var sessionTenant = sessionStorage.getItem("rootTenantLogo");
-                        
-                        if(sessionTenant){
-                            var imgSrc = "${url.resourcesPath}/img/tenants/"+sessionTenant+".png";
-                        }else{
-                            var imgSrc = "${url.resourcesPath}/img/logo.png";
-                        }
-
-                        var logoImg =  document.querySelector(".ui.header img");
-                        if(logoImg){
-                            logoImg.setAttribute('class','logo-image');
-                            if(sessionTenant) {
-                                var logoname = sessionTenant + 'logo';
-                                logoImg.setAttribute('alt',logoname);
-                            } else {
-                                var logoname = 'Sunbird logo';
-                                logoImg.setAttribute('alt',logoname);
-                            }
-                            logoImg.src = imgSrc;
-                            logoImg.addEventListener("error", ()=>{ logoImg.onerror=null;logoImg.src='${url.resourcesPath}/img/logo.png'});
-                        }
-                        
                         var slideIndex = 1;
                         alert();
                         showSlides(slideIndex);
