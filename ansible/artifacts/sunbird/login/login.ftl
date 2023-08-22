@@ -6,7 +6,7 @@
     <#elseif section = "form">
     <#if realm.password>
         <div class="login-container">
-                <div class="ui form segment error">
+                <div class="ui form error">
                 <p class="heading">Login</p>
                 <p id="mergeAccountMessage" class="hide mb-0 textCenter">${msg("mergeAccountMessage")}</p>
                 <p id="migrateAccountMessage" class="hide mb-0 textCenter">${msg("migrateAccountMessage")}</p>
@@ -71,9 +71,9 @@
                     </div>
                   <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                     <div id="kc-registration" class="field">
-                                <div class="ui content signUpMsg">
-                                    ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>${msg("registerHere")}</span>
-                                </div>
+                        <div class="ui content signUpMsg">
+                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>${msg("registerHere")}</span>
+                        </div>
                     </div>
                   </#if>
                     <div id="selfSingUp" class="hide">
