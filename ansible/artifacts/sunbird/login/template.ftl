@@ -162,6 +162,8 @@
                         }
                         
                         var slideIndex = 1;
+                        showSlides(this.slideIndex);
+                        setInterval(() => { plusSlides(1) }, 3000);
                         // Next/previous controls
                         plusSlides(n) {
                             showSlides(slideIndex += n);
