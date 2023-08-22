@@ -11,11 +11,7 @@
                 <p id="mergeAccountMessage" class="hide mb-0 textCenter">${msg("mergeAccountMessage")}</p>
                 <p id="migrateAccountMessage" class="hide mb-0 textCenter">${msg("migrateAccountMessage")}</p>
                 <div class="formMsg textCenter mt-8">
-                <#if message?has_content>
-                    <div id="error-summary" class="ui text ${message.type}">
-                        ${message.summary}
-                    </div>
-                    </#if>
+               
                     <div id="success-msg" class="ui text success hide">suceess</div>
                     <div id="error-msg" class="ui text error hide">error</div>
                 </div>
@@ -53,6 +49,11 @@
                         <input placeholder="${msg('passwordPlaceholder')}" class=" mt-8" id="password" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" name="password" type="password" autocomplete="current-password" />
                     <span class="ui text error hide" id="inCorrectPasswordError">${msg("inCorrectPasswordError")}</span>
                     </div>
+                     <#if message?has_content>
+                    <div id="error-summary" class="ui text ${message.type}">
+                        ${message.summary}
+                    </div>
+                    </#if>
                     <div class="remember-forgot-row">
                     <div class="sb-checkbox sb-checkbox-secondary hide">
                         <input type="checkbox" id="rememberme" name="rememberme">
