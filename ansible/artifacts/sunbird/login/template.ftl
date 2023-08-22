@@ -27,6 +27,7 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>-->
+    <script src="${url.resourcesPath}/js/slider.js" type="text/javascript"></script>
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
@@ -139,36 +140,27 @@
                         </div>
                     </div>
                     <script type="text/javascript">
-                        var slideIndex = 1;
-                        alert();
-                        showSlides(slideIndex);
-                        setInterval(() => { plusSlides(1) }, 3000);
-                        // Next/previous controls
-                        plusSlides(n) {
-                            showSlides(slideIndex += n);
+                        var sessionTenant = sessionStorage.getItem("rootTenantLogo");
+                        
+                        if(sessionTenant){
+                            var imgSrc = "${url.resourcesPath}/img/tenants/"+sessionTenant+".png";
+                        }else{
+                            var imgSrc = "${url.resourcesPath}/img/logo.png";
                         }
 
-                        // Thumbnail image controls
-                        currentSlide(n) {
-                            showSlides(slideIndex = n);
-                        }
-
-                        showSlides(n) {
-                            let i;
-                            let slides = document.getElementsByClassName("mySlides");
-                            let dots = document.getElementsByClassName("dot");
-                            if (n > slides.length) { slideIndex = 1 }
-                            if (n < 1) { slideIndex = slides.length }
-                            for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
+                        var logoImg =  document.querySelector(".ui.header img");
+                        if(logoImg){
+                            logoImg.setAttribute('class','logo-image');
+                            if(sessionTenant) {
+                                var logoname = sessionTenant + 'logo';
+                                logoImg.setAttribute('alt',logoname);
+                            } else {
+                                var logoname = 'Sunbird logo';
+                                logoImg.setAttribute('alt',logoname);
                             }
-                            for (i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" active", "");
-                            }
-                            slides[slideIndex - 1].style.display = "block";
-                            dots[slideIndex - 1].className += " active";
+                            logoImg.src = imgSrc;
+                            logoImg.addEventListener("error", ()=>{ logoImg.onerror=null;logoImg.src='${url.resourcesPath}/img/logo.png'});
                         }
-
                     </script>
                     <#if displayInfo>
                         <div id="kc-info" class="${properties.kcInfoAreaClass!}">
