@@ -938,7 +938,7 @@ input:focus {
     width: 300px;
 }
 
-.blue {
+.ui.blue {
     background-color: rgb(55, 82, 205) !important;
     border-radius: 8px !important;
 }
