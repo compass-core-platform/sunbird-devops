@@ -20,7 +20,7 @@
     </#if>
     <title><#nested "title"></title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
-    <1--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
+    <!--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
     <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />-->
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
