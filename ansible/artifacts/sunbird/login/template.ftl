@@ -6,10 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <!--<meta name="last-modified" content="2019-01-17 15:30:17 +0530">
     <meta http-equiv="Expires" content="600" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
