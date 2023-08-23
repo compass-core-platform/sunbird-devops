@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="field mb-8">
-                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary width-100">${msg("login")}</button>
+                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary blue width-100">${msg("login")}</button>
                     </div>
                   <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                     <div id="kc-registration" class="field">

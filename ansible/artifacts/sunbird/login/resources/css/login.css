@@ -899,8 +899,8 @@ input:focus-visible {
 
 input {
     width: 300px !important;
-    border-radius: 8px;
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    border-radius: 8px!important;
+    font-family: 'Lato', Arial, Helvetica, sans-serif !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     color: rgba(0, 0, 0, 0.6) !important;
@@ -938,10 +938,9 @@ input:focus {
     width: 300px;
 }
 
-.ui.blue {
-    background-color: rgb(55, 82, 205);
-    width: 300px;
-    border-radius: 8px;
+.blue {
+    background-color: rgb(55, 82, 205) !important;
+    border-radius: 8px !important;
 }
 
 .forgot-password {
