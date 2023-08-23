@@ -17,13 +17,13 @@
                 </div>
                 <form id="kc-form-login"  onsubmit="login.disabled = true; return true;" class="ui form mt-16" method="POST" action="${url.loginAction}">
                     <div class="field">
-                        <label id="usernameLabel" for="username" class="">
+                        <label for="username" class="">
                             <#if !realm.loginWithEmailAllowed>${msg("username")}
                             <#elseif !realm.registrationEmailAsUsername>${msg("emailOrPhone")}
                             <#else>${msg("email")}
                             </#if>
                         </label>
-                        <label id="usernameLabelPlaceholder" for="username" class="activeLabelColor hide">
+                        <label for="username" class="activeLabelColor hide">
                             <#if !realm.loginWithEmailAllowed>${msg("username")}
                             <#elseif !realm.registrationEmailAsUsername>${msg("placeholderForEmailOrPhone")}
                             <#else>${msg("email")}
