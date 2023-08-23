@@ -25,7 +25,7 @@
                         </label>
                         <label id="usernameLabelPlaceholder" for="username" class="activeLabelColor hide">
                             <#if !realm.loginWithEmailAllowed>${msg("username")}
-                            <#elseif !realm.registrationEmailAsUsername>Enter your email id
+                            <#elseif !realm.registrationEmailAsUsername>${msg("placeholderForEmailOrPhone")}
                             <#else>${msg("email")}
                             </#if>
                         </label>
