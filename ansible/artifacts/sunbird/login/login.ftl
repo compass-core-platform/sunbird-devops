@@ -38,11 +38,11 @@
                     </div>
                     <div class="field mb-8">
                         <div>
-                            <label id="passwordLabel" for="password" class="">
+                            <label for="password" class="">
                                 ${msg("password")}
                             </label>
 
-                            <label id="passwordLabelPlaceholder" for="password" class="activeLabelColor hide">
+                            <label for="password" class="activeLabelColor hide">
                                 ${msg("placeholderForPassword")}
                             </label>
                         </div>
