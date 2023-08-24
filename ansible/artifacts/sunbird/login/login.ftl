@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="field mb-8">
-                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary blue width-100">${msg("login")}</button>
+                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary ui blue width-100">${msg("login")}</button>
                     </div>
                   <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                     <div id="kc-registration" class="field">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                   </#if>
-                    <div id="selfSingUp" class="hide">
+                    <!--<div id="selfSingUp" class="hide">
                         <p class="or my-16 textCenter">OR</p>
                         <div class="field">
                             <#if realm.password && social.providers??>
@@ -97,7 +97,7 @@
                                 ${msg("doSignWithState")}
                             </button>
                         </div>
-                    </div>
+                    </div>-->
                 </form>
                 <a id="goBack" class="textCenter mt-16 hide cursor-pointer">${msg("goBack")}</a>
             <!-- <button id="goBack" class="sb-btn sb-btn-normal sb-btn-link sb-btn-link-primary back-btn hide" type="button">
