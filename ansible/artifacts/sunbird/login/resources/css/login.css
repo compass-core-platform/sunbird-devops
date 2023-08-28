@@ -152,7 +152,7 @@ p.subtitle {
     color: #024f9d;
     font-size: 12px;
     line-height: 17px;
-    /* float: right; */
+    float: left;
 }
 
 .forgetPasswordLink:hover,
