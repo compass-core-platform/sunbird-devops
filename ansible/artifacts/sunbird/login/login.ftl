@@ -49,6 +49,12 @@
                         <input placeholder="${msg('passwordPlaceholder')}" class=" mt-8" id="password" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" name="password" type="password" autocomplete="current-password" />
                     <span class="ui text error hide" id="inCorrectPasswordError">${msg("inCorrectPasswordError")}</span>
                     </div>
+                     <div class="forgot-password">
+                      <#if realm.resetPasswordAllowed>
+                        <a id="fgtKeycloakFlow" class="ui right floated forgetPasswordLink hide" tabindex="0" onclick="javascript:storeLocation(); javascript:makeDivUnclickable(); javascript:storeForgotPasswordLocation(event);" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
+                        <div id="fgtPortalFlow" role="link" class="ui right floated forgetPasswordLink hide" tabindex="0" onclick="javascript:makeDivUnclickable(); javascript:createTelemetryEvent(event); javascript:forgetPassword('/recover/identify/account');">${msg("doForgotPassword")}</div>
+                      </#if>
+                    </div>
                      <#if message?has_content>
                     <div id="error-summary" class="login-message ui text ${message.type}">
                         ${message.summary}
@@ -58,12 +64,6 @@
                     <div class="sb-checkbox sb-checkbox-secondary hide">
                         <input type="checkbox" id="rememberme" name="rememberme">
                         <label for="rememberme">Remember Me</label>
-                    </div>
-                    <div class="forgot-password">
-                      <#if realm.resetPasswordAllowed>
-                        <a id="fgtKeycloakFlow" class="ui right floated forgetPasswordLink hide" tabindex="0" onclick="javascript:storeLocation(); javascript:makeDivUnclickable(); javascript:storeForgotPasswordLocation(event);" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a>
-                        <div id="fgtPortalFlow" role="link" class="ui right floated forgetPasswordLink hide" tabindex="0" onclick="javascript:makeDivUnclickable(); javascript:createTelemetryEvent(event); javascript:forgetPassword('/recover/identify/account');">${msg("doForgotPassword")}</div>
-                      </#if>
                     </div>
                     </div>
 
