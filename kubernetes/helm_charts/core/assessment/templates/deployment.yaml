@@ -31,6 +31,13 @@ spec:
         - name: {{ .Chart.Name }}-xml-config
           configMap:
             name: {{ .Chart.Name }}-xml-config
+{{- $keys := .Files.Glob "keys/*" }}
+{{- if $keys }}
+      - name: access-keys
+        secret:
+          secretName: {{ .Chart.Name }}-access-keys
+{{- end }}
+            
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.dockerhub }}/{{ .Values.repository }}:{{ .Values.image_tag }}"
@@ -60,7 +67,13 @@ spec:
           - name: {{ .Chart.Name }}-xml-config
             mountPath: /home/sunbird/assessment-service-1.0-SNAPSHOT/config/logback.xml
             subPath: assessment-service_logback.xml
-learner_access_basepath: {{ learner_access_basepath | default('/keys/') }}
+{{- $keys := .Files.Glob "keys/*" }}
+{{- if $keys }}
+        - mountPath: {{ .Values.learner_access_basepath }}
+          name: access-keys
+{{- end }}
+{{- if .Values.learner_opa_enabled }}
+          
 
           
 ---
