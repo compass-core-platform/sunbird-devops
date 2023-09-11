@@ -28,6 +28,7 @@ strategy:
   maxunavailable: {{ assessment_maxunavailable|default('25%') }}
 
 {{ assessment_liveness_readiness | to_nice_yaml }}
+learner_access_basepath: {{ learner_access_basepath | default('/keys/') }}
 
 autoscaling:
   enabled: {{ assessment_autoscaling_enabled | default('false') }}
