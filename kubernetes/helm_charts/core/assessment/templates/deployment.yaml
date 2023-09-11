@@ -72,7 +72,6 @@ spec:
         - mountPath: {{ .Values.learner_access_basepath }}
           name: access-keys
 {{- end }}
-{{- if .Values.learner_opa_enabled }}
           
 
           
