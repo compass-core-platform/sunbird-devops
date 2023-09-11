@@ -60,6 +60,8 @@ spec:
           - name: {{ .Chart.Name }}-xml-config
             mountPath: /home/sunbird/assessment-service-1.0-SNAPSHOT/config/logback.xml
             subPath: assessment-service_logback.xml
+learner_access_basepath: {{ learner_access_basepath | default('/keys/') }}
+
           
 ---
 apiVersion: v1
