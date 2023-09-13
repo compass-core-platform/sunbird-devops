@@ -6,12 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-    <meta http-equiv="cache-control" content="max-age=0" />
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="Cache-Control" content="no-store" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <meta name="last-modified" content="2019-01-17 15:30:17 +0530">
-    <meta http-equiv="Expires" content="600" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!--<meta name="last-modified" content="2019-01-17 15:30:17 +0530">
+    <meta http-equiv="Expires" content="600" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
@@ -20,11 +19,15 @@
     </#if>
     <title><#nested "title"></title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    <!--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />-->
+    
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
+   
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
             <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
@@ -77,9 +80,63 @@
                         </div-->
                     </#if>
 
-                    <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                            <#nested "form">
+
+                    <div class="ui grid">
+                        <div class="two column row padded equal height grid login">
+                            <div class="column login-left">
+                                <div class="logo">
+                                    <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
+                                </div>
+                                <!-- Slideshow container -->
+                                <div class="slideshow-container">
+
+                                    <!-- Full-width images with number and caption text -->
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="slider-heading">1. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="slider-heading">2. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mySlides fade">
+                                        <div class="slide">
+                                            <p class="slider-heading">3. Track your goal, perform better!</p>
+                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Next and previous buttons -->
+                                    <!-- <span class="prev" (click)="plusSlides(-1)">&#10094;</span>
+                                    <span class="next" (click)="plusSlides(1)">&#10095;</span> -->
+                                </div>
+                                <br>
+
+                                <!-- The dots/circles -->
+                                <div class="slider-dots">
+                                    <span class="dot" onclick="currentSlide(1)"></span>
+                                    <span class="dot" onclick="currentSlide(2)"></span>
+                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                </div>
+                            </div>
+                            <div class="column login-right ui grid middle aligned">
+
+
+                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                                        <#nested "form">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <script type="text/javascript">
@@ -104,7 +161,6 @@
                             logoImg.src = imgSrc;
                             logoImg.addEventListener("error", ()=>{ logoImg.onerror=null;logoImg.src='${url.resourcesPath}/img/logo.png'});
                         }
-
                     </script>
                     <#if displayInfo>
                         <div id="kc-info" class="${properties.kcInfoAreaClass!}">
@@ -119,5 +175,6 @@
     </div>
     </main>
 </body>
+ <script src="${url.resourcesPath}/js/slider.js" type="text/javascript"></script>
 </html>
 </#macro>
