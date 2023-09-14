@@ -7130,7 +7130,7 @@ kong_apis:
 
 - name: questionSetUpdateHierarchy
   uris: "{{ questionset_prefix }}/v1/hierarchy/update"
-  upstream_url: "{{ assessment_service_url }}/questionset/v4/hierarchy/update"
+  upstream_url: "{{ assessment_service_url }}/questionset/v5/hierarchy/update"
   strip_uri: true
   plugins:
   - name: jwt
