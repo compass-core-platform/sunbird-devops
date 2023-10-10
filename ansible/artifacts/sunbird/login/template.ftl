@@ -81,60 +81,58 @@
                     </#if>
 
 
-                    <div class="ui grid">
-                        <div class="two column row padded equal height grid login">
-                            <div class="column login-left">
-                                <div class="logo">
-                                    <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
-                                </div>
-                                <!-- Slideshow container -->
-                                <div class="slideshow-container">
-
-                                    <!-- Full-width images with number and caption text -->
-                                    <div class="mySlides fade">
-                                        <div class="slide">
-                                            <p class="slider-heading">1. Track your goal, perform better!</p>
-                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
-                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="mySlides fade">
-                                        <div class="slide">
-                                            <p class="slider-heading">2. Track your goal, perform better!</p>
-                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
-                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="mySlides fade">
-                                        <div class="slide">
-                                            <p class="slider-heading">3. Track your goal, perform better!</p>
-                                            <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
-                                                ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Next and previous buttons -->
-                                    <!-- <span class="prev" (click)="plusSlides(-1)">&#10094;</span>
-                                    <span class="next" (click)="plusSlides(1)">&#10095;</span> -->
-                                </div>
-                                <br>
-
-                                <!-- The dots/circles -->
-                                <div class="slider-dots">
-                                    <span class="dot" onclick="currentSlide(1)"></span>
-                                    <span class="dot" onclick="currentSlide(2)"></span>
-                                    <span class="dot" onclick="currentSlide(3)"></span>
-                                </div>
+                    <div class="ui grid stackable">
+                        <div class="six wide column login-left">
+                            <div class="logo">
+                                <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
                             </div>
-                            <div class="column login-right ui grid middle aligned">
+                            <!-- Slideshow container -->
+                            <div class="slideshow-container">
 
-
-                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                                        <#nested "form">
+                                <!-- Full-width images with number and caption text -->
+                                <div class="mySlides fade">
+                                    <div class="slide">
+                                        <p class="slider-heading">1. Track your goal, perform better!</p>
+                                        <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
                                     </div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="slide">
+                                        <p class="slider-heading">2. Track your goal, perform better!</p>
+                                        <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                    </div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                    <div class="slide">
+                                        <p class="slider-heading">3. Track your goal, perform better!</p>
+                                        <p class="slider-sub-heading">Et quidem rerum hic tenetur a se esse fugiendum itaque turbent, ut enim
+                                            ad minima veniam, quis nostrum exercitationem ullam corporis.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Next and previous buttons -->
+                                <!-- <span class="prev" (click)="plusSlides(-1)">&#10094;</span>
+                                <span class="next" (click)="plusSlides(1)">&#10095;</span> -->
+                            </div>
+                            <br>
+
+                            <!-- The dots/circles -->
+                            <div class="slider-dots">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                            </div>
+                        </div>
+                        <div class="six wide column login-right middle aligned">
+
+
+                            <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                                <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                                    <#nested "form">
                                 </div>
                             </div>
                         </div>
