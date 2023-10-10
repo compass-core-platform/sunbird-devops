@@ -963,11 +963,11 @@ input:focus {
     }
     .login {
         height: unset !important;
-        .login-left {
-            background-image: unset !important;
-        }
     }
     .login-right {
         height: 100vh;
+    }
+    .login-left {
+        background-image: unset !important;
     }
 }
