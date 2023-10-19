@@ -331,7 +331,7 @@ a {
 .registerLink {
     color: #024f9d;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .registerLink:hover,
