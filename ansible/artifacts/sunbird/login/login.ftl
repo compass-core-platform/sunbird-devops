@@ -32,9 +32,9 @@
                         </label>
                          <#if usernameEditDisabled??>
                          <#-- TODO: need to find alternative for prepopulating username -->
-                        <input class="mt-8" id="username" name="username" placeholder="Enter your email / mobile number" type="text" disabled />
+                        <input class="mt-8" id="username" name="username" placeholder="Enter your email" type="text" disabled />
                         <#else>
-                        <input class="mt-8" id="username" name="username" placeholder="Enter your email / mobile number" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" type="text" autofocus autocomplete="username" />
+                        <input class="mt-8" id="username" name="username" placeholder="Enter your email" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" type="text" autofocus autocomplete="username" />
                         </#if>
                     </div>
                     <div class="field mb-8">
