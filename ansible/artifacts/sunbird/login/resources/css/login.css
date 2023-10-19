@@ -330,7 +330,7 @@ a {
 
 .registerLink {
     color: #024f9d;
-    font-weight: bold;
+    font-weight: 700 !important;
     text-decoration: none;
 }
 
