@@ -776,7 +776,7 @@ input:focus-visible {
 }
 
 .login-left {
-    background-color: rgb(35, 134, 252) !important;
+    background-color: rgb(1, 84, 210) !important;
     background: url('./../img/login-bg.png') fixed no-repeat bottom right;
     background-attachment: scroll;
 }
@@ -939,7 +939,7 @@ input:focus {
 }
 
 .ui.blue {
-    background-color: rgb(55, 82, 205);
+    background-color: rgb(1, 84, 210);
     /* width: 300px; */
     border-radius: 8px;
 }
@@ -970,9 +970,6 @@ input:focus {
     }
     .login-right {
         height: 100%;
-        border-top-left-radius: 32px!important;
-        border-top-right-radius: 32px!important;
-        margin-top: -32px!important;
         padding-left: 0px !important;
         padding-right: 0px !important;
         padding-top: 0px !important;
@@ -1004,5 +1001,8 @@ input:focus {
     }
     #kc-form-wrapper {
         background: #ffffff !important;
+        border-top-left-radius: 32px!important;
+        border-top-right-radius: 32px!important;
+        margin-top: -32px!important;
     }
 }
