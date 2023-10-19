@@ -1005,4 +1005,8 @@ input:focus {
         border-top-right-radius: 32px!important;
         margin-top: -32px!important;
     }
+
+    .signUpMsg {
+        margin-top: 80px !important;
+    }
 }
