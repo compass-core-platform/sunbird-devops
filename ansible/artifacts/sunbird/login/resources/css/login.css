@@ -973,6 +973,9 @@ input:focus {
         border-top-left-radius: 32px!important;
         border-top-right-radius: 32px!important;
         margin-top: -32px!important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
     }
     .login-left {
         background-image: unset !important;
