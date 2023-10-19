@@ -9,8 +9,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <!--<meta name="last-modified" content="2019-01-17 15:30:17 +0530">
-    <meta http-equiv="Expires" content="600" />-->
+    <meta name="last-modified" content="2019-01-17 15:30:17 +0530">
+    <meta http-equiv="Expires" content="600" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
@@ -19,14 +19,14 @@
     </#if>
     <title><#nested "title"></title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
-    <link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
-    <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />
+    <!--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
+    <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />-->
     
-    <!--<#if properties.styles?has_content>
+    <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
-    </#if>-->
+    </#if>
    
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
