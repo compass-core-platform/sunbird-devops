@@ -1007,6 +1007,7 @@ input:focus {
     }
 
     .signUpMsg {
+        text-align: center;
         margin-top: 80px !important;
     }
 }
