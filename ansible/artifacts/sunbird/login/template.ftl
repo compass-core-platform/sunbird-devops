@@ -137,6 +137,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="mobile-registration" class="field">
+                        <div class="ui content signUpMsg">
+                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>${msg("registerHere")}</span>
+                        </div>
+                    </div>
                     </div>
                     <script type="text/javascript">
                         var sessionTenant = sessionStorage.getItem("rootTenantLogo");

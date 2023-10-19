@@ -961,6 +961,10 @@ input:focus {
     display: none;
 }
 
+#mobile-registration {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         overflow: scroll !important;
@@ -1010,5 +1014,9 @@ input:focus {
     .signUpMsg {
         text-align: center;
         margin-top: 80px !important;
+    }
+
+    #kc-registration {
+        display: none;
     }
 }
