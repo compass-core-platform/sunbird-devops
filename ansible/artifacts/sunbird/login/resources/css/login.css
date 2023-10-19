@@ -970,8 +970,8 @@ input:focus {
     }
     .login-right {
         height: 100%;
-        border-top-left-radius: 32px;
-        border-top-right-radius: 32px;
+        border-top-left-radius: 32px!important;
+        border-top-right-radius: 32px!important;
         margin-top: -32px!important;
     }
     .login-left {
