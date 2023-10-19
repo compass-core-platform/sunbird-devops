@@ -7,7 +7,7 @@
     <#if realm.password>
         <div class="login-container">
                 <div class="ui form error">
-                <p class="heading">Login</p>
+                <p class="heading">Sign In</p>
                 <p id="mergeAccountMessage" class="hide mb-0 textCenter">${msg("mergeAccountMessage")}</p>
                 <p id="migrateAccountMessage" class="hide mb-0 textCenter">${msg("migrateAccountMessage")}</p>
                 <div class="formMsg textCenter mt-8">

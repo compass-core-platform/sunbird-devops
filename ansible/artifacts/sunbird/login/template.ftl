@@ -9,8 +9,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <meta name="last-modified" content="2019-01-17 15:30:19 +0530">
-    <meta http-equiv="Expires" content="600" />
+    <!--<meta name="last-modified" content="2019-01-17 15:30:19 +0530">
+    <meta http-equiv="Expires" content="600" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <#if properties.meta?has_content>
         <#list properties.meta?split(' ') as meta>
@@ -139,7 +139,7 @@
                         </div>
                         <div id="mobile-registration" class="field">
                         <div class="ui content signUpMsg">
-                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>${msg("registerHere")}</span>
+                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>Sign Up</span>
                         </div>
                     </div>
                     </div>
