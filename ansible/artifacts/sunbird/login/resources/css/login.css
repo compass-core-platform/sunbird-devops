@@ -997,7 +997,7 @@ input:focus {
         text-align: center !important;
     }
     .logo img {
-        margin-left: unset;
+        margin-left: 0px !important;
     }
     #kc-form-wrapper {
         background: #ffffff !important;
