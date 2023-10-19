@@ -980,4 +980,7 @@ input:focus {
     .mobile-heading {
         display: block;
     }
+    .slider-dots {
+        display: none;
+    }
 }
