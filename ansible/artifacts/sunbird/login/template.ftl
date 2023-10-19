@@ -86,6 +86,7 @@
                             <div class="logo">
                                 <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
                             </div>
+                            <p class="slider-heading mobile-heading">Track your goal, perform better!</p>
                             <!-- Slideshow container -->
                             <div class="slideshow-container">
 

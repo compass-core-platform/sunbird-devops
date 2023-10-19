@@ -957,6 +957,10 @@ input:focus {
     display: inline-block;
 }
 
+.mobile-heading {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     body {
         overflow: scroll !important;
@@ -965,9 +969,15 @@ input:focus {
         height: unset !important;
     }
     .login-right {
-        height: 100vh;
+        height: 100%;
     }
     .login-left {
         background-image: unset !important;
+    }
+    .slideshow-container {
+        display: none;
+    }
+    .mobile-heading {
+        display: block;
     }
 }
