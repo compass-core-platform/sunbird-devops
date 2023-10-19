@@ -992,6 +992,7 @@ input:focus {
         line-height: 36px;
         text-align: center;
         margin-top: 20px;
+        margin-bottom: 75px
     }
     .logo {
         text-align: center !important;
