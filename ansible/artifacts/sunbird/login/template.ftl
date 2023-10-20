@@ -17,7 +17,8 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title><#nested "title"></title>
+    <!--<title><#nested "title"></title>-->
+    <title>Compass</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
     <!--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
     <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />-->
