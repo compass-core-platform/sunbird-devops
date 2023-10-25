@@ -942,7 +942,7 @@ input:focus {
 .ui.blue {
     background-color: rgb(1, 84, 210);
     /* width: 300px; */
-    border-radius: 8px;
+    /* border-radius: 8px; */
     font-size: 14px !important;
 }
 
