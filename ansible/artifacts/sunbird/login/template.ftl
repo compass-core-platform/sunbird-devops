@@ -19,7 +19,7 @@
     </#if>
     <!--<title><#nested "title"></title>-->
     <title>Compass</title>
-    <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
+    <link rel="icon" href="${url.resourcesPath}/img/favicon.svg" />
     <!--<link href="${url.resourcesPath}/css/semantic.min.css" rel="stylesheet" />
     <link href="${url.resourcesPath}/css/login.css" rel="stylesheet" />-->
     
@@ -85,7 +85,7 @@
                     <div class="ui grid stackable">
                         <div class="six wide column login-left">
                             <div class="logo">
-                                <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.png" /></a>
+                                <a href="${properties.kcLogoLink!'#'}"><img src="${url.resourcesPath}/img/sunbird_logo.svg" /></a>
                             </div>
                             <p class="slider-heading mobile-heading">Track your goal, perform better!</p>
                             <!-- Slideshow container -->
