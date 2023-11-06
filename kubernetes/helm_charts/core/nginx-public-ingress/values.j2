@@ -2062,13 +2062,10 @@ keycloakconf: |
       proxy_http_version 1.1;
       proxy_pass http://keycloak;
     }
-    # Static Assets for keycloak endpoints with caching
+   # Static Assets for keycloak endpoints with caching
     location ~ /auth/(resources/(.+\.(png|svg|ico|js|eot|ttf|woff|woff2|css))|welcome-content/(.+\.(png|svg|ico|js|eot|ttf|woff|woff2|css))) {
-      # Enabling compression
-      include /etc/nginx/defaults.d/compression.conf;
       # Enabling caching
-      # caching include Accept-Encoding header also, to provide gziped or plain content as per request
-      proxy_cache_key "$http_accept_encoding|$request_uri|$request_body";
+      proxy_cache_key $proxy_host$request_uri;
       proxy_cache {{proxy_cache_path.small_cache.keys_zone.split(':') | first}};
       add_header X-Proxy-Cache $upstream_cache_status;
       add_header X-Proxy-Cache-Date $upstream_http_date;
