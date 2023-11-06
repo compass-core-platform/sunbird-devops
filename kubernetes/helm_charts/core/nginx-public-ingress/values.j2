@@ -1018,7 +1018,7 @@ proxyconfig: |-
 {% endif %}
     {# Including custom configuration #}
     {{ proxy_custom_config }}}
-server {
+   server {
     if ($host = www.digitalpublicgoods.academy) {
         return 301 https://$host$request_uri;
         }
