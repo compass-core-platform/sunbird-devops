@@ -1114,6 +1114,7 @@ proxyconfig: |-
     location ~ /auth/resources/(.+\.(png|svg|ico|js|eot|ttf|woff|woff2|css)) {
       # Enabling caching
       proxy_cache_key $proxy_host$request_uri;
+      proxy_cache content_cache;
       add_header X-Proxy-Cache $upstream_cache_status;
       add_header X-Proxy-Cache-Date $upstream_http_date;
       proxy_cache_use_stale error timeout updating http_500 http_502 http_503 http_504;
@@ -1981,7 +1982,18 @@ nginxconfig: |
       {% for key,value in proxy_cache_path.items() %}
       proxy_cache_path {{value['path']}} levels={{value['levels']}} keys_zone={{value['keys_zone']}} max_size={{value['max_size']}} inactive={{value['inactive']}} use_temp_path=off;
       {% endfor %}
-
+      # caching for images and files
+      proxy_cache_path /tmp/proxy_cache levels=1:2 keys_zone=tmp_cache:5m max_size=10m inactive=300m use_temp_path=off;
+      # caching for apis
+      proxy_cache_path /tmp/api_cache levels=1:2 keys_zone=proxy_cache:5m max_size=600m inactive=1400m use_temp_path=off;
+      # cache framework
+      proxy_cache_path /tmp/framework_cache levels=1:2 keys_zone=framework_cache:5m max_size=700m inactive=300m use_temp_path=off;
+      # cache content
+      proxy_cache_path /tmp/content_cache levels=1:2 keys_zone=content_cache:100m max_size=3000m inactive=600m use_temp_path=off;
+      # searchnodes content
+      proxy_cache_path /tmp/searchnodes_cache levels=1:2 keys_zone=searchnodes_cache:100m max_size=3000m inactive=600m use_temp_path=off;
+      # cache content metadata
+      proxy_cache_path /tmp/content_metadata levels=1:2 keys_zone=content_metadata:100m max_size=1000m inactive=300m use_temp_path=off;
      server {
        listen 9145;
        location /metrics {
