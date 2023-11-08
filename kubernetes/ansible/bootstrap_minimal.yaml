@@ -48,6 +48,20 @@
             site.crt: "{{ core_vault_proxy_site_crt | b64encode }}"
             site.key: "{{ core_vault_proxy_site_key | b64encode }}"
           EOF
+    - name: Creating dpg domain ssl
+      shell: 
+        cmd: |
+          cat <<EOF | kubectl apply -f -
+          apiVersion: v1
+          kind: Secret
+          metadata:
+            name: dpg-ingress-cert
+            namespace: "{{ bootstrap_namespace.split(',')[0] }}"
+          data:
+            dpg-ca.crt: ""
+            dpg-site.crt: "{{ dpg_core_vault_proxy_site_crt | b64encode }}"
+            dpg-site.key: "{{ dpg_core_vault_proxy_site_key | b64encode }}"
+          EOF
     - name: Creating domain ssl
       shell:
         cmd: |
