@@ -10644,9 +10644,9 @@ kong_apis:
     config.required: false
     config.enabled: false
 
-  - name: ratingAndReviews
-    uris: "/ratings"
-    upstream_url: "{{ sb_cb_ext_service_url }}/ratings"
+  - name: addRatingAndReviews
+    uris: "ratings/v1/upsert"
+    upstream_url: "{{ sb_cb_ext_service_url }}/ratings/v1/upsert"
     strip_uri: true
     plugins:
     - name: jwt
