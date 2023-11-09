@@ -7,7 +7,7 @@
     <#if realm.password>
         <div class="login-container">
                 <div class="ui form error">
-                <p class="heading">Login</p>
+                <p class="heading">Sign In</p>
                 <p id="mergeAccountMessage" class="hide mb-0 textCenter">${msg("mergeAccountMessage")}</p>
                 <p id="migrateAccountMessage" class="hide mb-0 textCenter">${msg("migrateAccountMessage")}</p>
                 <div class="formMsg textCenter mt-8">
@@ -18,10 +18,11 @@
                 <form id="kc-form-login"  onsubmit="login.disabled = true; return true;" class="ui form mt-16" method="POST" action="${url.loginAction}">
                     <div class="field">
                         <label for="username" class="">
-                            <#if !realm.loginWithEmailAllowed>${msg("username")}
+                            <!--<#if !realm.loginWithEmailAllowed>${msg("username")}
                             <#elseif !realm.registrationEmailAsUsername>${msg("emailOrPhone")}
                             <#else>${msg("email")}
-                            </#if>
+                            </#if>-->
+                            Email ID
                         </label>
                         <label for="username" class="activeLabelColor hide">
                             <#if !realm.loginWithEmailAllowed>${msg("username")}
@@ -31,9 +32,9 @@
                         </label>
                          <#if usernameEditDisabled??>
                          <#-- TODO: need to find alternative for prepopulating username -->
-                        <input class="mt-8" id="username" name="username" placeholder="Enter your email / mobile number" type="text" disabled />
+                        <input class="mt-8" id="username" name="username" placeholder="Enter your email" type="text" disabled />
                         <#else>
-                        <input class="mt-8" id="username" name="username" placeholder="Enter your email / mobile number" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" type="text" autofocus autocomplete="username" />
+                        <input class="mt-8" id="username" name="username" placeholder="Enter your email" onfocusin="inputBoxFocusIn(this)" onfocusout="inputBoxFocusOut(this)" type="text" autofocus autocomplete="username" />
                         </#if>
                     </div>
                     <div class="field mb-8">
@@ -68,12 +69,12 @@
                     </div>
 
                     <div class="field mb-8">
-                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary ui blue width-100">${msg("login")}</button>
+                        <button id="login" onclick="doLogin(event)" class="mt-24 sb-btn sb-btn-normal sb-btn-primary ui blue width-100">Sign In</button>
                     </div>
                   <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                     <div id="kc-registration" class="field">
                         <div class="ui content signUpMsg">
-                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick=navigate('self')>${msg("registerHere")}</span>
+                            ${msg("noAccount")} <span id="signup" role="link" tabindex="0" class="registerLink" onclick="navigate('self')">${msg("registerHere")}</span>
                         </div>
                     </div>
                   </#if>
