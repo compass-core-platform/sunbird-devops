@@ -26,9 +26,13 @@ spec:
       - name: {{ .Values.imagepullsecrets }}
 {{- end }}
       volumes:
+        
         - name: tls
           secret:
             secretName: ingress-cert
+        - name: dpg-tls
+          secret:
+            secretName: dpg-ingress-cert
         - name: proxy-config
           configMap:
             name: proxy-default
@@ -49,6 +53,8 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
+          - name: dpg-tls
+            mountPath: /etc/secrets
           - name: tls
             mountPath: /etc/secrets
             readOnly: true
