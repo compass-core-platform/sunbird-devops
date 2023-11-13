@@ -54,7 +54,8 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
           - name: dpg-tls
-            mountPath: /etc/secrets
+            mountPath: /etc/secrets/dpg
+            readOnly: true
           - name: tls
             mountPath: /etc/secrets
             readOnly: true
