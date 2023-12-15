@@ -41,7 +41,7 @@ spec:
         resources:
         volumeMounts:
         - name: config
-          mountPath: /etc/keys/imports/realm-export-config.json
+          mountPath: /etc/keys/imports/config.json
           subPath: config.json
         - name: realm-export-config
           mountPath: /etc/keys/imports/realm-export-config.json
