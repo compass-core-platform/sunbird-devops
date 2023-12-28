@@ -126,6 +126,7 @@ assessment_prefix: /assessment
 programs_service_prefix: /programs
 resource_prefix: /resource
 rating_prefix: /ratings
+wishlist_prefix: /wishlist
 
 # Service URLs
 knowledge_mw_service_url: "http://knowledge-mw-service:5000"
@@ -10898,7 +10899,55 @@ kong_apis:
   - name: request-size-limiting
     config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: getWishlist
+  uris: "{{ wishlist_prefix }}/v1/get"
+  upstream_url: "{{ learning_service_url }}/v1/wishlist/get"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: acl
+      config.whitelist:
+        - userAccess
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: addWishlist
+  uris: "{{ wishlist_prefix }}/v1/add"
+  upstream_url: "{{ learning_service_url }}/v1/wishlist/add"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: acl
+      config.whitelist:
+        - userAccess
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: removeWishlist
+  uris: "{{ wishlist_prefix }}/v1/remove"
+  upstream_url: "{{ learning_service_url }}/v1/wishlist/remove"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: acl
+      config.whitelist:
+        - userAccess
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
 
     
