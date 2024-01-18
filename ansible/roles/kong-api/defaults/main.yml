@@ -127,6 +127,7 @@ programs_service_prefix: /programs
 resource_prefix: /resource
 rating_prefix: /ratings
 wishlist_prefix: /wishlist
+network_hub_prefix: /network
 # Service URLs
 knowledge_mw_service_url: "http://knowledge-mw-service:5000"
 learning_service_url: "http://learner-service:9000"
@@ -161,6 +162,7 @@ notification_service_url: "http://notification-service:9000"
 registry_service_url: "http://registry-service:8081"
 sb_cb_ext_service_url: "http://sb-cb-ext-service:7001"
 nodebb_url: "http://nodebb-service:4567/discussions"
+hub_service_url: "http://hub-graph-service:4013"
 
 premium_consumer_rate_limits:
   - api: createContent
@@ -10933,9 +10935,116 @@ kong_apis:
     config.required: false
     config.enabled: false
 
+- name: networkAdd
+  uris: "{{ network_hub_prefix }}/connections/add"
+  upstream_url: "{{ hub_service_url }}/connections/add"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: networkUpdate
+  uris: "{{ network_hub_prefix }}/connections/update"
+  upstream_url: "{{ hub_service_url }}/connections/update"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: networkEstablished
+  uris: "{{ network_hub_prefix }}/connections/established"
+  upstream_url: "{{ hub_service_url }}/connections/profile/fetch/established"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
 
+- name: networkRecieved
+  uris: "{{ network_hub_prefix }}/connections/recieved"
+  upstream_url: "{{ hub_service_url }}/connections/profile/fetch/requests/received"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
 
-
+- name: networkRequested
+  uris: "{{ network_hub_prefix }}/connections/requested"
+  upstream_url: "{{ hub_service_url }}/connections/profile/fetch/requested"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
     
+- name: networkSuggests
+  uris: "{{ network_hub_prefix }}/connections/suggests"
+  upstream_url: "{{ hub_service_url }}/connections/profile/find/suggests"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: networkRecommeded
+  uris: "{{ network_hub_prefix }}/connections/recommended"
+  upstream_url: "{{ hub_service_url }}/connections/profile/find/recommended"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
+    
+- name: networkSearch
+  uris: "{{ network_hub_prefix }}/connections/search"
+  upstream_url: "{{ hub_service_url }}/v1/user/autocomplete/"
+  strip_uri: true
+  plugins:
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
+    
+
