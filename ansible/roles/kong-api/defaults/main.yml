@@ -11132,3 +11132,24 @@ kong_apis:
     config.required: false
     config.enabled: false
 
+- name: fileUpload
+  uris: "{{ user_service_prefix }}/v1/file/upload"
+  upstream_url: "{{ learning_service_url }}/v1/file/upload"
+  strip_uri: true
+  plugins:
+  - name: jwt
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: acl
+    config.whitelist:
+    - userAdmin
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ medium_request_size_limit }}"
+  - name: opa-checks
+    config.required: false
+    config.enabled: false
+
