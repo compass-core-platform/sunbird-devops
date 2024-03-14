@@ -1936,6 +1936,27 @@ kong_apis:
     config.required: true
     config.enabled: true
 
+- name: recommendedConsumedCourses
+  uris: "{{ course_service_prefix }}/v1/user/consumed/recommended/list"
+  upstream_url: "{{ lms_service_url }}/v1/user/consumed/courses/recommendation/list"
+  strip_uri: true
+  plugins:
+  - name: jwt
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: acl
+    config.whitelist:
+    - anonymousCourseAccess
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
+  - name: opa-checks
+    config.required: true
+    config.enabled: true
+
 - name: privateListCourseEnrollments
   uris: "{{ course_service_prefix }}/private/v1/user/enrollment/list"
   upstream_url: "{{ lms_service_url }}/private/v1/user/courses/list"
