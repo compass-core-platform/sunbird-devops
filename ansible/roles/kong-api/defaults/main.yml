@@ -128,6 +128,7 @@ resource_prefix: /resource
 rating_prefix: /ratings
 wishlist_prefix: /wishlist
 network_hub_prefix: /network
+goals_service_prefix: /goals
 # Service URLs
 knowledge_mw_service_url: "http://knowledge-mw-service:5000"
 learning_service_url: "http://learner-service:9000"
@@ -163,6 +164,7 @@ registry_service_url: "http://registry-service:8081"
 sb_cb_ext_service_url: "http://sb-cb-ext-service:7001"
 nodebb_url: "http://nodebb-service:4567/discussions"
 hub_service_url: "http://hub-graph-service:4013"
+goals_service_url: "http://goals-module-service:8080"
 
 premium_consumer_rate_limits:
   - api: createContent
@@ -11289,6 +11291,146 @@ kong_apis:
 - name: readNotificationFeed
   uris: "{{ notification_service_prefix }}/v1/feed/read"
   upstream_url: "{{ notification_service_url }}/v1/notification/feed/read"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsNodeCreate
+  uris: "{{ goals_service_prefix }}/node/v1/create"
+  upstream_url: "{{ goals_service_url }}/v1/node/create"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsNodeUpdate
+  uris: "{{ goals_service_prefix }}/node/v1/update"
+  upstream_url: "{{ goals_service_url }}/v1/node/update"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsNodeReadAll
+  uris: "{{ goals_service_prefix }}/node/v1/read/all"
+  upstream_url: "{{ goals_service_url }}/v1/node/read/all"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsNodeReadById
+  uris: "{{ goals_service_prefix }}/node/v1/read"
+  upstream_url: "{{ goals_service_url }}/v1/node/read"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsNodeFilter
+  uris: "{{ goals_service_prefix }}/node/v1/filter"
+  upstream_url: "{{ goals_service_url }}/v1/node/filter"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsEntityCreate
+  uris: "{{ goals_service_prefix }}/entity/v1/create"
+  upstream_url: "{{ goals_service_url }}/v1/entity/create"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsEntityUpdate
+  uris: "{{ goals_service_prefix }}/entity/v1/update"
+  upstream_url: "{{ goals_service_url }}/v1/entity/update"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsEntityReadAll
+  uris: "{{ goals_service_prefix }}/entity/v1/read/all"
+  upstream_url: "{{ goals_service_url }}/v1/entity/read/all"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsEntityReadById
+  uris: "{{ goals_service_prefix }}/entity/v1/read"
+  upstream_url: "{{ goals_service_url }}/v1/entity/read"
+  strip_uri: true
+  plugins:
+    - name: cors
+    - "{{ statsd_pulgin }}"
+    - name: rate-limiting
+      config.policy: local
+      config.hour: "{{ medium_rate_limit_per_hour }}"
+      config.limit_by: credential
+    - name: request-size-limiting
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
+
+- name: goalsEntityFilter
+  uris: "{{ goals_service_prefix }}/entity/v1/filter"
+  upstream_url: "{{ goals_service_url }}/v1/entity/filter"
   strip_uri: true
   plugins:
     - name: cors
