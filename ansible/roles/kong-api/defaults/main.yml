@@ -11260,6 +11260,28 @@ kong_apis:
     config.required: false
     config.enabled: false
 
+
+- name: userPrivateFeedCreateV2
+  uris: "{{ user_service_prefix }}/feed/v3/create"
+  upstream_url: "{{ learning_service_url }}/private/user/feed/v2/create"
+  strip_uri: true
+  plugins:
+  - name: jwt
+  - name: cors
+  - "{{ statsd_pulgin }}"
+  - name: acl
+    config.whitelist:
+    - userAccess
+  - name: rate-limiting
+    config.policy: local
+    config.hour: "{{ medium_rate_limit_per_hour }}"
+    config.limit_by: credential
+  - name: request-size-limiting
+    config.allowed_payload_size: "{{ small_request_size_limit }}"
+  - name: opa-checks
+    config.required: false
+    config.enabled: false
+
 - name: notificationSendSync
   uris: "{{ notification_service_prefix }}/send/sync"
   upstream_url: "{{ notification_service_url }}/v1/notification/send/sync"
@@ -11441,3 +11463,4 @@ kong_apis:
       config.limit_by: credential
     - name: request-size-limiting
       config.allowed_payload_size: "{{ small_request_size_limit }}"
+
